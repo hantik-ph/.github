@@ -1,0 +1,52 @@
+name: Bug
+description: Something that worked, or should work, doesn't.
+title: "<Module>: <what is wrong, in one sentence>"
+labels: ["type:bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One bug per issue. Search first; add a 👍 to an existing issue instead of a duplicate.
+        Keep it short. Steps and a screenshot beat a paragraph.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Where the fix lands. Add the matching `area:` label after filing.
+      options: [client, api, server, runtime, core, general, industry, ops, ci, docs, aspire]
+    validations:
+      required: true
+  - type: input
+    id: module
+    attributes:
+      label: Module
+      description: If one module owns it (Sales, Banking, RealEstateLeasing…). Use it as the title prefix.
+      placeholder: Banking
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to …
+        2. Click …
+        Current: …
+        Expected: …
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Error output / screenshot
+      description: Paste the error or drop a screenshot. Leave empty if none.
+      render: shell
+  - type: input
+    id: spec
+    attributes:
+      label: Spec reference
+      description: Optional. The requirement this contradicts, e.g. `033 FR-PAY-009`.
+  - type: checkboxes
+    id: controls
+    attributes:
+      label: Does this touch money, authorization, tenant isolation or audit?
+      options:
+        - label: "Yes — add the `security` label after filing"

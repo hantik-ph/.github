@@ -1,0 +1,52 @@
+name: Decision
+description: Someone has to choose before work can start.
+title: "<Module>: decide <the question>"
+labels: ["needs:decision"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One question, at most three options, a named decider.
+        When decided: record the answer in a comment, swap the label to `type:feature`/`type:bug`/`type:spec`, remove `needs:decision`.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [client, api, server, runtime, core, general, industry, ops, ci, docs, aspire]
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: The question
+      description: One sentence. What exactly must be chosen?
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options
+      description: Two or three. One line each, with the cost of each.
+      placeholder: |
+        A. … — cheap now, blocks X later
+        B. … — one more table, matches Business One
+    validations:
+      required: true
+  - type: dropdown
+    id: decider
+    attributes:
+      label: Decider
+      description: The one person who answers. Assign them to the issue too.
+      options: [oladdd, monteverol]
+    validations:
+      required: true
+  - type: input
+    id: by
+    attributes:
+      label: Needed by
+      placeholder: 2026-11-01, or "blocks #123"
+  - type: input
+    id: spec
+    attributes:
+      label: Spec reference
+      placeholder: 031 FR-AGE-003

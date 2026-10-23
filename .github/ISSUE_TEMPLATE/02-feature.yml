@@ -1,0 +1,49 @@
+name: Feature or change
+description: Something the product should do, or do differently.
+title: "<Module>: <the outcome, in one sentence>"
+labels: ["type:feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the outcome for the person using it, not the implementation.
+        If a decision has to be made first, file a **Decision** instead.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [client, api, server, runtime, core, general, industry, ops, ci, docs, aspire]
+    validations:
+      required: true
+  - type: input
+    id: module
+    attributes:
+      label: Module
+      placeholder: Sales
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What can't be done today, and who is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: Observable outcomes. Each line should be testable.
+      placeholder: |
+        - A frozen customer cannot receive a delivery; the refusal names the reason.
+        - An unfrozen customer's delivery still issues.
+    validations:
+      required: true
+  - type: textarea
+    id: out
+    attributes:
+      label: Out of scope
+      description: What this deliberately does not change.
+  - type: input
+    id: spec
+    attributes:
+      label: Spec reference
+      placeholder: 017 (new FR) or "needs a spec"
