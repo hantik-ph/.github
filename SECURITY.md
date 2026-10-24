@@ -1,21 +1,35 @@
 # Security policy
 
-Hantik holds other businesses' financial and personal data. Every report is taken seriously.
+Hantik holds other businesses' financial and personal data. Every report is
+read and taken seriously.
 
-## Reporting
+## Supported versions
 
-Do **not** open a public issue.
+Only the latest release of `hantik-ph/hantik` is supported. Releases are tagged
+on that repository; the newest tag is the supported line. Older tags receive no
+fixes. Upgrade before reporting an issue you can no longer reproduce there.
 
-Use GitHub's private vulnerability reporting on the affected repository (**Security → Report a vulnerability**), or email `security@hantik.ph`.
+## Reporting a vulnerability
 
-Include: what you found, where, how to reproduce it, and what an attacker could do with it.
+Do **not** open a public issue, pull request or discussion.
+
+Use GitHub's private vulnerability reporting on the `hantik` repository:
+**Security** tab → **Report a vulnerability**. Include what you found, where,
+how to reproduce it, and what an attacker could do with it. If it affects
+`docs`, report it on `hantik` as well; the same people read both.
 
 ## What to expect
 
-- Acknowledgement within 2 working days.
-- A fix or mitigation plan within 14 days for anything exposing tenant data, money, authorization or audit.
+- Acknowledgement within **3 business days** (Philippine time).
+- The repository owner decides severity, the fix, the timing and any
+  disclosure. You will be told what was decided and when it ships.
 - Credit in the release notes if you want it.
 
 ## Scope
 
-All repositories in `hantik-ph` and the hosted Hantik service. Tenant isolation, authorization bypass, audit tampering, secret exposure and money-handling defects are in scope. Missing best-practice headers without a demonstrated impact are not.
+In scope: `hantik-ph/hantik` and `hantik-ph/docs`, and the hosted Hantik
+service they build. Tenant isolation, authorization bypass, audit tampering,
+secret exposure and money-handling defects are the ones that matter most.
+
+Out of scope: the archived legacy repositories (they are read-only and receive
+no fixes), and missing best-practice headers without a demonstrated impact.
