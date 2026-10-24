@@ -1,52 +1,33 @@
 name: Bug
 description: Something that worked, or should work, doesn't.
-title: "<Module>: <what is wrong, in one sentence>"
-labels: ["type:bug"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
         One bug per issue. Search first; add a 👍 to an existing issue instead of a duplicate.
-        Keep it short. Steps and a screenshot beat a paragraph.
-  - type: dropdown
-    id: area
-    attributes:
-      label: Area
-      description: Where the fix lands. Add the matching `area:` label after filing.
-      options: [client, api, server, runtime, core, general, industry, ops, ci, docs, aspire]
-    validations:
-      required: true
-  - type: input
-    id: module
-    attributes:
-      label: Module
-      description: If one module owns it (Sales, Banking, RealEstateLeasing…). Use it as the title prefix.
-      placeholder: Banking
+        Title: one plain sentence saying what is wrong. Add the module or area label after filing.
   - type: textarea
-    id: steps
+    id: problem
     attributes:
-      label: Steps to reproduce
-      placeholder: |
-        1. Go to …
-        2. Click …
-        Current: …
-        Expected: …
+      label: Problem
+      description: What happens, where, and how to make it happen again. Paste the error if there is one.
     validations:
       required: true
   - type: textarea
-    id: evidence
+    id: expected
     attributes:
-      label: Error output / screenshot
-      description: Paste the error or drop a screenshot. Leave empty if none.
-      render: shell
-  - type: input
-    id: spec
+      label: Expected behavior
+      description: What should happen instead. Each line should be testable.
+    validations:
+      required: true
+  - type: textarea
+    id: out
     attributes:
-      label: Spec reference
-      description: Optional. The requirement this contradicts, e.g. `033 FR-PAY-009`.
-  - type: checkboxes
-    id: controls
+      label: Out of scope
+      description: What this deliberately does not change.
+  - type: textarea
+    id: refs
     attributes:
-      label: Does this touch money, authorization, tenant isolation or audit?
-      options:
-        - label: "Yes — add the `security` label after filing"
+      label: Refs
+      description: The spec requirement, related issues, where the numbers came from.

@@ -1,0 +1,27 @@
+name: Question
+description: Someone has to decide before work can start.
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One question, at most three options, and the person who decides named in the body.
+        Title: the question as one plain sentence. Add the module or area label after filing.
+        When decided, record the answer in a comment and close the issue; file the work as a Bug or a Feature.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What must be chosen, the options with the cost of each, and who decides.
+    validations:
+      required: true
+  - type: textarea
+    id: out
+    attributes:
+      label: Out of scope
+      description: What is not up for decision here.
+  - type: textarea
+    id: refs
+    attributes:
+      label: Refs
+      description: The spec requirement, related issues, where the numbers came from.

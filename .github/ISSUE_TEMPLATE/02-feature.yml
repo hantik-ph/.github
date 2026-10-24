@@ -1,25 +1,13 @@
 name: Feature or change
 description: Something the product should do, or do differently.
-title: "<Module>: <the outcome, in one sentence>"
-labels: ["type:feature"]
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
         Describe the outcome for the person using it, not the implementation.
-        If a decision has to be made first, file a **Decision** instead.
-  - type: dropdown
-    id: area
-    attributes:
-      label: Area
-      options: [client, api, server, runtime, core, general, industry, ops, ci, docs, aspire]
-    validations:
-      required: true
-  - type: input
-    id: module
-    attributes:
-      label: Module
-      placeholder: Sales
+        Title: one plain sentence saying the outcome. Add the module or area label after filing.
+        If someone has to decide first, file a Question instead.
   - type: textarea
     id: problem
     attributes:
@@ -28,13 +16,10 @@ body:
     validations:
       required: true
   - type: textarea
-    id: done
+    id: acceptance
     attributes:
-      label: Done when
+      label: Acceptance criteria
       description: Observable outcomes. Each line should be testable.
-      placeholder: |
-        - A frozen customer cannot receive a delivery; the refusal names the reason.
-        - An unfrozen customer's delivery still issues.
     validations:
       required: true
   - type: textarea
@@ -42,8 +27,8 @@ body:
     attributes:
       label: Out of scope
       description: What this deliberately does not change.
-  - type: input
-    id: spec
+  - type: textarea
+    id: refs
     attributes:
-      label: Spec reference
-      placeholder: 017 (new FR) or "needs a spec"
+      label: Refs
+      description: The spec requirement, related issues, where the numbers came from.
